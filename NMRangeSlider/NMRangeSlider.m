@@ -58,6 +58,8 @@
     _minimumValue = 0.0;
     _maximumValue = 1.0;
     _minimumRange = 0.0;
+    _lowerMaxValue = 0.0;
+    _upperMinValue = 0.0;
     _stepValue = 0.0;
     _stepValueInternal = 0.0;
     
@@ -92,6 +94,9 @@
     }
     
     value = MAX(value, _minimumValue);
+    if (_lowerMaxValue) {
+        value = MIN(value, _lowerMaxValue);        
+    }
     value = MIN(value, _upperValue - _minimumRange);
     
     _lowerValue = value;
@@ -109,6 +114,10 @@
     }
 
     value = MIN(value, _maximumValue);
+    if (_upperMinValue) {
+        value = MAX(value, _upperMinValue);        
+    }
+    
     value = MAX(value, _lowerValue+_minimumRange);
     
     _upperValue = value;

@@ -30,6 +30,8 @@
     [self configureSetValueSlider];
     [self configureSteppedSlider];
     [self configureSteppedSliderAlternative];
+    [self configureLowerMaxUpperMinSlider];
+
 }
 
 
@@ -43,6 +45,7 @@
     [self setUpperLabel:nil];
     [self setLabelSlider:nil];
     [self setSetValuesSlider:nil];
+    [self setLowerMaxUpperMinSlider:nil];
     [super viewDidUnload];
 }
 
@@ -188,6 +191,14 @@
     self.steppedContinuouslySlider.stepValueContinuously = YES;
     
 }
+
+- (void) configureLowerMaxUpperMinSlider
+{
+    self.lowerMaxUpperMinSlider.lowerMaxValue = 0.7;
+    self.lowerMaxUpperMinSlider.upperMinValue = 0.3;
+}
+
+
 
 // ------------------------------------------------------------------------------------------------------
 

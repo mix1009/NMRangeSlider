@@ -20,6 +20,12 @@
 // default 0.0. This is the minimum distance between between the upper and lower values
 @property(assign, nonatomic) float minimumRange;
 
+// default 0.0. 
+@property(assign, nonatomic) float lowerMaxValue;
+
+// default 0.0. 
+@property(assign, nonatomic) float upperMinValue;
+
 // default 0.0 (disabled)
 @property(assign, nonatomic) float stepValue;
 
@@ -36,6 +42,7 @@
 
 // default 1.0. this value will be pinned to min/max
 @property(assign, nonatomic) float upperValue;
+
 
 // center location for the lower handle control
 @property(readonly, nonatomic) CGPoint lowerCenter;
